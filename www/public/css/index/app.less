@@ -1,0 +1,507 @@
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+
+
+/* This file is completely optional and not required. */
+/* Note the reference that includes it in the index.html file. */
+
+
+/* Disable certain interactions on touch devices */
+/* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+/* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+body {
+    -webkit-touch-callout: none ;
+    -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
+    -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
+    -webkit-highlight: none ;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) ;
+    -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+html {
+    -ms-touch-action: pan-x ;
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+body {
+    -ms-touch-action: pan-y ;
+    -ms-content-zooming: none ;
+}
+
+/* allow copy-paste */
+input, textarea  {
+    -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
+}
+
+body {
+    /* margin: 0.5rem ; */
+    background: white ;
+    color: @deeppurple;
+}
+
+
+.page-content {
+    background: #8255d2;
+}
+
+.list-block ul:after {
+    background-color: rgba(255, 255, 255, 0.54);
+}
+
+.list-block {
+    .item-content {
+        background-color: lighten(@deeppurple,8%);
+        color: @white;
+    }
+    .item-inner:after{
+            height: 0px;
+    }
+}
+
+
+
+
+
+@white: #ffffff;
+@black: #000000;
+@blue: #74baee;
+@darkBlue: #7a9dbb;
+@darkGrey: #777777;
+@lightGrey: #fafafa;
+@deeppurple-10: #673ab7;
+@deeppurple: lighten(@deeppurple-10,10%);
+
+.color-white {
+    color:@white;
+}
+
+body {
+	background: @white;
+}
+.navbar {
+	border-bottom: none;
+	background: @blue;
+	color: @white;
+	a.link {
+		color: @white;
+	}
+}
+.page {
+	background: #fff;
+}
+.searchbar {
+    :after {
+        background-color: @white;
+    }
+	background: @deeppurple;
+	border-bottom: 0px;
+	.searchbar-cancel {
+		color: @white;
+	}
+
+    input[type=search] {
+        background-color: lighten(@deeppurple,0%);
+        color:@white;
+
+        border-radius: 0px;
+    }
+
+    input[type=search]:focus {
+        background-color: darken(@deeppurple, 20%);;
+        color:@white;
+    }
+}
+i.icon-plus {
+	color: @white;
+	height: 25px;
+	font-size: 31px;
+	line-height: 20px;
+	font-weight: 200;
+}
+
+i.icon-bars {
+    color: @white;
+}
+i.ion-compose {
+	font-size: 25px;
+	font-weight: 100;
+}
+.panel {
+	background: darken(@deeppurple,10%);
+	ul {
+		border-bottom: 0px;
+		border-top: 1px solid lighten(@darkBlue, 5%);
+	}
+	.list-block {
+        background-color: transparent;
+		.item-content {
+            background-color: @deeppurple;
+			border-bottom: 1px solid lighten(@deeppurple, 5%);
+		}
+		.item-link:active {
+			background-color: darken(@deeppurple, 10%);
+		}
+		.item-link {
+			.item-inner {
+				background: none;
+				border-bottom: 0px;
+                :after {
+                    heigh:0px;
+                }
+			}
+		}
+		.item-title {
+			color: @lightGrey;
+		}
+		i {
+			color: @lightGrey;
+			font-size: 25px;
+			font-weight: 100;
+		}
+	}
+}
+body.with-panel-left-reveal {
+	.statusbar-overlay {
+		background: @darkBlue;
+	}
+}
+.popup-overlay {
+	background: rgba(128, 128, 128, 0.2);
+}
+.popup {
+	.navbar {
+		-webkit-transform-style: preserve-3d;
+		-webkit-backface-visibility: hidden;
+	}
+}
+.statusbar-overlay {
+	background: @blue;
+}
+
+
+.contacts-list,
+.buildings-list {
+	margin: 0;
+
+	.item-title {
+		color: @white;
+	}
+	.item-subtitle {
+		font-size: 13px;
+		color: fade(@white,50%);
+        text-transform: lowercase;
+        font-style: italic;
+	}
+	.item-media {
+		padding-top: 7px !important;
+		padding-bottom: 8px !important;
+		img {
+			width: 48px;
+			height: 48px;
+			border-radius: 24px;
+		}
+	}
+	.list-group-title {
+		line-height: 22px;
+		padding: 10px 15px;
+		color:@white;
+		border-top: 1px solid @deeppurple;
+		font-weight: 500;
+        background-color: @deeppurple;
+		-webkit-transform:translate3d(0,0,0);
+		-webkit-backface-visibility:hidden;
+		-webkit-transform-style: preserve-3d;
+	}
+	li + .list-group-title {
+		margin-top: -1px;
+	}
+	ul {
+		border: none;
+        background: none;
+	}
+}
+
+/* building page - view & edit */
+
+    .content-block {
+        color:@white;
+    }
+
+
+.building-list-fields() {
+    margin-top: 0px;
+	ul {
+		border-top: 0px;
+		border-bottom: 0px;
+		.item-media {
+			padding-top: 4px;
+			padding-bottom: 4px;
+			i {
+				font-size: 24px;
+				color: @white;
+			}
+		}
+	}
+}
+
+.building-photo() {
+    margin:20px;
+	-webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+	img {
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+		display: block;
+	}
+}
+
+building-header {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.building-edit-form {
+	.item-photo {
+		.contact-photo()
+	}
+	.building-header {
+		.list-block {
+			width: 100%;
+			margin: 0px;
+			ul {
+				border-top: 0px;
+				.item-content {
+                    background-color: @deeppurple;
+					padding-left: 0px;
+				}
+			}
+		}
+	}
+	.building-other {
+		.building-list-fields()
+	}
+	.item-link.building-delete-button {
+		text-align: left;
+		color: @white;
+        background-color: darken(@deeppurple,10%);
+		padding-left: 51px;
+	}
+}
+
+.building-page {
+	.item-photo {
+		.building-photo()
+	}
+	.header-text {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 10px;
+		.icon-favorite {
+			position: absolute;
+			left: 106px;
+			top: 60px;
+			color: @blue;
+			font-size: 16px;
+		}
+		h3 {
+			font-weight: 500;
+			margin-bottom: 0em;
+		}
+		p {
+			margin-top: 0.5em;
+		}
+	}
+	.list-block {
+		.building-list-fields()
+	}
+}
+
+.building-edit-form {
+    item[type=text] {
+        color: @white;
+    }
+
+    .list-block input[type=time], .list-block input[type=number], .list-block input[type=search], .list-block input[type=text], .list-block input[type=password], .list-block input[type=email], .list-block input[type=tel], .list-block input[type=url], .list-block input[type=date], .list-block input[type=datetime-local], .list-block select, .list-block textarea {
+        color: @white;
+    }
+}
+
+/* Contact page - view & edit */
+
+.contact-list-fields() {
+	margin-top: 0px;
+	ul {
+		border-top: 0px;
+		border-bottom: 0px;
+		.item-media {
+			padding-top: 4px;
+			padding-bottom: 4px;
+			i {
+				font-size: 24px;
+				color: @white;
+			}
+		}
+	}
+}
+
+.contact-photo() {
+	margin:20px;
+	-webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+	img {
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+		display: block;
+	}
+}
+
+
+.contact-header {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.contact-edit-form {
+	.item-photo {
+		.contact-photo()
+	}
+	.contact-header {
+		.list-block {
+			width: 100%;
+			margin: 0px;
+			ul {
+				border-top: 0px;
+				.item-content {
+                    background-color: @deeppurple;
+					padding-left: 0px;
+				}
+			}
+		}
+	}
+	.contact-other {
+		.contact-list-fields()
+	}
+	.item-link.contact-delete-button {
+		text-align: left;
+		color: @white;
+        background-color: darken(@deeppurple,10%);
+		padding-left: 51px;
+	}
+}
+
+.contact-page {
+	.item-photo {
+		.contact-photo()
+	}
+	.header-text {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 10px;
+		.icon-favorite {
+			position: absolute;
+			left: 106px;
+			top: 60px;
+			color: @blue;
+			font-size: 16px;
+		}
+		h3 {
+			font-weight: 500;
+			margin-bottom: 0em;
+		}
+		p {
+			margin-top: 0.5em;
+		}
+	}
+	.list-block {
+		.contact-list-fields()
+	}
+}
+
+.contact-edit-form {
+    item[type=text] {
+        color: @white;
+    }
+
+    .list-block input[type=time], .list-block input[type=number], .list-block input[type=search], .list-block input[type=text], .list-block input[type=password], .list-block input[type=email], .list-block input[type=tel], .list-block input[type=url], .list-block input[type=date], .list-block input[type=datetime-local], .list-block select, .list-block textarea {
+        color: @white;
+    }
+}
+
+/*
+	Android optimization hacks
+*/
+// Navbar animation
+html.android .navbar-from-right-to-center .left.sliding .back.link .icon,
+html.android .navbar-from-center-to-right .left.sliding .back.link .icon,
+html.android .navbar-from-center-to-left .left.sliding .back.link .icon,
+html.android .navbar-from-left-to-center .left.sliding .back.link .icon {
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+html.android .navbar-from-right-to-center .sliding,
+html.android .navbar-from-center-to-right .sliding,
+html.android .navbar-from-center-to-left .sliding,
+html.android .navbar-from-left-to-center .sliding {
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+// Page Animations
+html.android .page-from-right-to-center {
+	-webkit-animation: pageFromRightToCenterDegrade 200ms forwards;
+	animation: pageFromRightToCenterDegrade 200ms forwards;
+}
+html.android .page-from-center-to-right {
+	-webkit-animation: pageFromCenterToRightDegrade 200ms forwards;
+	animation: pageFromCenterToRightDegrade 200ms forwards;
+}
+html.android .page-on-left {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+html.android .page-from-center-to-left {
+	-webkit-animation: emptyAnimation 50ms forwards;
+	animation: emptyAnimation 50ms forwards;
+}
+html.android .page-from-left-to-center {
+	-webkit-animation: emptyAnimation 50ms forwards;
+	animation: emptyAnimation 50ms forwards;
+}
+@-webkit-keyframes emptyAnimation {
+	from {}
+	to {opacity: 1;}
+}
+@keyframes emptyAnimation {
+	from {}
+	to {opacity: 1;}
+}
+// Switch
+html.android .label-switch input[type="checkbox"] + .checkbox {
+	-webkit-transition-duration: 0ms;
+	transition-duration: 0ms;
+}
+html.android .label-switch input[type="checkbox"] + .checkbox:before {
+	-webkit-transition-duration: 0ms;
+	transition-duration: 0ms;
+}
+html.android .label-switch input[type="checkbox"] + .checkbox:after {
+	-webkit-transition-duration: 0ms;
+	transition-duration: 0ms;
+}
+// Remove sticky notes if android (it makes visual lags during scrolling in android 4.1 (and maybe other prior versions))
+html.android .list-block .list-group-title {
+	display: none;
+}

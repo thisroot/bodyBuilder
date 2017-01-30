@@ -1,0 +1,30 @@
+{{#.}}
+<li class="list-group-title">{{letter}}</li>
+{{#each list}}
+<li data-id="{{id}}" class="building-item">
+    <a href="building.html?id={{id}}" class="item-link">
+        <div class="item-content">
+            <div class="item-media"><img src="public/img/cats/{{picId}}.png" width="44"></div>
+            <div class="item-inner">
+                <div class="item-title-row">
+                    <div class="item-title">
+                        {{name}} {{#if sessionTime}}
+                        <div class="chip">
+                            <div class="chip-media"><i class="icon ion-android-stopwatch"></i></div>
+                            <div class="chip-label"> {{sessionTime}} min </div>
+                        </div>
+                        {{/if}} {{#if allTime}}
+                        <div class="chip">
+                            <div class="chip-media"><i class="icon ion-android-time"></i></div>
+                            <div class="chip-label">{{allTime}} min</div>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="item-subtitle">{{muscles}}</div>
+                <div class="hidden item-tags">{{name}} {{groups}} {{muscles}}</div>
+            </div>
+        </div>
+    </a>
+</li>
+{{/each}} {{/.}}
